@@ -55,7 +55,7 @@ def log_metrics():
         acc = acc + (acc_stop - acc) * 0.1 - random.uniform(0.0001, 0.01)
         val_loss = val_loss - (val_loss - val_loss_stop) * 0.1 + random.uniform(0.0001, 0.01)
         loss = loss - (loss - loss_stop) * 0.1 + random.uniform(0.0001, 0.01)
-        time.sleep(0.5)
+        time.sleep(0.1)
 
     mlflow.log_metric('test_accuracy', acc_stop)
     mlflow.log_metric('test_loss', loss_stop)
